@@ -1,12 +1,12 @@
 CREATE TABLE Product (
-	prodID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    prodID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     prodName VARCHAR(200) NOT NULL,
     prodPicNameSmall VARCHAR(200) NOT NULL,
     prodPicNameLarge VARCHAR(200) NOT NULL,
     prodDescripShort VARCHAR(1000),
-	prodDescripLong VARCHAR(3000),
-	prodPrice DECIMAL(8,2) NOT NULL,
-	prodQuantity INT NOT NULL
+    prodDescripLong VARCHAR(3000),
+    prodPrice DECIMAL(8,2) NOT NULL,
+    prodQuantity INT NOT NULL
 )
 
 INSERT INTO Product (prodName, prodPicNameSmall, prodPicNameLarge, prodDescripShort, prodDescripLong, prodPrice, prodQuantity)
