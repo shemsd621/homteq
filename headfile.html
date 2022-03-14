@@ -1,0 +1,40 @@
+<!--HTML document to define the layout of the header and the navigation bar-->
+<!-- document type declaration - HTML 5-->
+<!DOCTYPE html>
+<!-- declare the language of the web page to assist search engines and browsers - US style of English declared-->
+<html lang="en-US">
+    <head>
+    <!--path to the Google fonts API in the stylesheet is provided inside an href attribute and a rel attribute with a value of stylesheet-->
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="container">
+            <!--href attribute specifies the URL of the page the link goes to while there is no text decoration : underline removed-->
+            <a style="text-decoration:none" href="https://w1839055.users.ecs.westminster.ac.uk/homteq/index.php">
+                <div id="navbar">
+                    <div id="header">
+                        <h1>homteq`</h1>
+                        <h2>your home for home tech</h2></a>
+                        <!--built in date and time function used for handling dates and time efficiently-->
+                        <h3><?php echo "London, ".date('l d F Y h:i:s');?> </h3>
+                    </div>
+                    <div id="navigation">
+                        <ul>
+                            <div>
+                                <li><a href='index.php'>Home Tech</a></li>
+                                <li><a href='aboutus.php'>About Us</a></li>
+                                <li><a href='signup.php'>Sign Up</a></li>
+                                <li><a href='login.php'>Login</a></li>
+                            </div>;
+                            <div>
+                                <li><a href='basket.php'>Smart Basket</a></li>
+                                <li><a href='login.php'>Staff Login</a></li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            <div id='content'>
+    </body>
+</html>
