@@ -15,6 +15,13 @@ include ("headfile.html"); //include header layout file
 
 echo "<h4>".$pagename."</h4>"; //display name of the page on the web page
 
+if (isset($_POST['h_prodid']))
+{
+    $delprodid = $_POST['h_prodid'];
+    unset($_SESSION['basket'][$delprodid]);
+    echo "<p>1 item removed from the basket</p>";
+}
+
 //if the posted ID of the new product is set i.e. if the user is adding a new product into the basket
 if(isset($_POST['h_prodid'])) {
 //capture the ID of selected product using the POST method and the $_POST superglobal variable
@@ -43,6 +50,7 @@ if(isset($_POST['h_prodid'])) {
 $total=0;
 //if the session array $_SESSION['basket'] is set
 if(isset($_SESSION['basket'])){
+    echo "<form action='basket.php' method='post'>";
     echo "<table>";
     echo "<tr>";
     echo "<th>Product</th>";
@@ -69,8 +77,23 @@ if(isset($_SESSION['basket'])){
             <td> $".$total."</td>
             </tr>";
     echo "</table>";
+    echo "<a href='clearbasket.php'>Clear Basket</a>";
 }else {
-    echo "<p>Basket empty</p>";
+    echo "<table>";
+    echo "  <tr>";
+    echo "	<th>Product</th>";
+    echo "	<th>Price</th>";
+    echo "	<th>Quantity</th>";
+    echo "	<th>Subtotal</th>";
+    echo "	<th></th>";
+    echo "  </tr>";
+
+
+    echo "<tr>
+    <td colspan='3'>Total</td>
+    <td> $".$total."</td>
+    </tr>";
+    echo "</table>";
 }
 $_SESSION['total']=$total;
 
