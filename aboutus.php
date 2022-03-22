@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $pagename="homteq: cloud controlled tech for your home"; //Create and populate a variable called $pagename
 
 echo "<link rel=stylesheet type=text/css href=mystylesheet.css>"; //Call in stylesheet
@@ -39,6 +41,7 @@ If your hands are covered in flour but you need a two-minute timer, you can set 
 stop kneading.
 Because virtual assistants live in a speaker with a microphone, they’re present in your home whenever you need 
 them.</p> 
+<br>
 <p class='updateInfo'>Whatever smart tech you are after, homteq has it on offer!</p>
 ";
 
