@@ -12,6 +12,8 @@ echo "<body>";
 
 include ("headfile.html"); //include header layout file
 
+include("detectlogin.php"); //include detect login php file
+
 echo "<h4>".$pagename."</h4>"; //display name of the page on the web page
 
 //retrieve the product id passed from previous page using the GET method and the $_GET superglobal variable
@@ -55,7 +57,7 @@ while ($arrayp=mysqli_fetch_array($exeSQL))
     //for loop to display the number of products for a particular product
     for($x=1; $x<=$arrayp['prodQuantity']; $x++)
     {
-        echo "<option value='.$x.'>".$x."</option>";
+        echo "<option value=".$x.">".$x."</option>";
     }
     echo "</select>";
     echo "<input type=submit name='submitbtn' value='ADD TO BASKET' id='submitbtn'>";

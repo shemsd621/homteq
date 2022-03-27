@@ -1,7 +1,7 @@
 <?php
-$dbhost = 'localhost'; //server where the host runs : default - localhost
-$dbuser = 'root';  //username : default - root
-$dbpass = ''; //password as same as the one used to access PHPMyAdmin : default - empty
+$dbhost = 'phpmyadmin.ecs.westminster.ac.uk'; //server where the host runs : default - localhost
+$dbuser = 'w1839055';  //username : default - root
+$dbpass = 'HadPmv1rGfWr'; //password as same as the one used to access PHPMyAdmin : default - empty
 $dbname = 'w1839055_0'; //database name where the query is performed
 //create a DB connection
 // can have upto 6 parameters (socket and port could also be included)

@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 include ("db.php"); // include db.php file to connect to DB
 
 $pagename="Make your home smart"; // create and populate variable called $pagename
@@ -10,6 +13,8 @@ echo "<title>".$pagename."</title>"; // display name of the page as window title
 echo "<body>";
 
 include ("headfile.html"); // include header layout file: inserted the file path as the parameter
+
+include("detectlogin.php"); //include detect login php file
 
 echo "<h4>".$pagename."</h4>"; //display name of the page on the web page
 
@@ -36,9 +41,9 @@ while ($arrayp=mysqli_fetch_array($exeSQL))
     echo "</td>";
     echo "<td style='border: 0px'>";
     //make the product name into an anchor to prodbuy.php and pass the product id by URL (the id from the array) - GET method used
-    echo "<a href=prodbuy.php?u_prod_id=".$arrayp['prodId'].">";
+    // echo "<a href=prodbuy.php?u_prod_id=".$arrayp['prodId'].">";
     echo "<p><h5>".$arrayp['prodName']."</h5>"; //display product name as contained in the array
-    echo "</a>";
+    // echo "</a>";
     echo "<p>".$arrayp['prodDescripShort']."</p>"; //display the product description as contained in the array
     echo "<p><b>$".$arrayp['prodPrice']."</b></p>"; //display product price as contained in the array
     echo "</td>";

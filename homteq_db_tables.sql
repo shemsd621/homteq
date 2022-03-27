@@ -1,12 +1,16 @@
+--
+-- Table structure for table `Product`
+--
+
 CREATE TABLE Product (
-    prodID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	prodID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     prodName VARCHAR(200) NOT NULL,
     prodPicNameSmall VARCHAR(200) NOT NULL,
     prodPicNameLarge VARCHAR(200) NOT NULL,
     prodDescripShort VARCHAR(1000),
-    prodDescripLong VARCHAR(3000),
-    prodPrice DECIMAL(8,2) NOT NULL,
-    prodQuantity INT NOT NULL
+	prodDescripLong VARCHAR(3000),
+	prodPrice DECIMAL(8,2) NOT NULL,
+	prodQuantity INT NOT NULL
 )
 
 INSERT INTO Product (prodName, prodPicNameSmall, prodPicNameLarge, prodDescripShort, prodDescripLong, prodPrice, prodQuantity)
@@ -26,3 +30,40 @@ VALUES('HP Spectre x360 14 1Q881AV', 'spectre_4_small.png', 'spectre_4_large.jpe
 'Best lightweight laptop for college students',
 'When we think about the best thin-and-light laptop, it’s always been a close contest between the Dell XPS 2-in-1 and the HP Spectre x360. This time around, we’re giving the luxurious HP Spectre x360 14 some time in the sun. The Spectre x360 14, now sporting the same Intel 11th-gen Tiger Lake CPU available in the Dell XPS line, trades blows with its eternal rival in test after test. It rises to the top because of a few key advantages: It offers longer battery life (thanks to a bigger battery), a far better keyboard, and little things like a USB-A port and a physical webcam shutoff switch, all for a lower price. Well played, HP.',
 '1099.99', '25');
+
+--
+-- Table structure for table `Users`
+--
+
+CREATE TABLE Users (
+     userId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+     userType varchar(1) NOT NULL,
+     userFName varchar(100) NOT NULL,
+     userSName varchar(100) NOT NULL,
+     userAddress varchar(200) NOT NULL,
+     userPostCode varchar(20) NOT NULL,
+     userTelNo varchar(20) NOT NULL,
+     userEmail varchar(100) UNIQUE NOT NULL,
+     userPassword varchar(100) NOT NULL
+)
+
+INSERT INTO Users (userId, userType, userFName, userSName, userAddress, userPostCode, userTelNo, userEmail, userPassword) VALUES
+(1, ' ', 'Oshani ', 'Sandanayaka', '123', '110011', '0761234567', 'shemaya.oshi26@gmail.com', '123'),
+(2, ' ', 'Anne', 'Lively', '234', '110011', '0762345678', 'anne@gmail.com', '234');
+
+CREATE TABLE Orders (
+      orderNo int(4) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+      userId int(4) NOT NULL KEY,
+      orderDateTime datetime NOT NULL,
+      orderTotal decimal(8,2) NOT NULL DEFAULT 0.00,
+      orderStatus varchar(50) NULL,
+      shippingDate date NULL
+)
+
+CREATE TABLE Order_Line (
+      orderLineId int(4) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+      orderNo int(4) NOT NULL,
+      prodId int(4) NOT NULL,
+      quantityOrdered int(4) NOT NULL,
+      subTotal decimal(8,2) NOT NULL DEFAULT 0.00
+)
